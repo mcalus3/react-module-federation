@@ -1,10 +1,10 @@
 {
-  "name": "app1",
+  "name": "loginApp",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "vite build",
-    "serve": "vite preview --port 5001 --strictPort"
+    "serve": "vite preview --port 5002 --strictPort"
   },
   "dependencies": {
     "react": "^18.0.0",

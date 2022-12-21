@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [
     reactRefresh(),
     federation({
-      name: "app1",
-      filename: "app1.js",
+      name: "loginApp",
+      filename: "loginApp.js",
       exposes: {
         "./index": "./src/App.tsx",
-        "./method": "./src/method.ts",
+        "./Button": "./src/Button.tsx",
       },
     }),
   ],

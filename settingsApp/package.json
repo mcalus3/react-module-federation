@@ -1,10 +1,10 @@
 {
-  "name": "app2",
+  "name": "settingsApp",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "vite build",
-    "serve": "vite preview --port 5002 --strictPort"
+    "serve": "vite preview --port 5001 --strictPort"
   },
   "dependencies": {
     "react": "^18.0.0",
