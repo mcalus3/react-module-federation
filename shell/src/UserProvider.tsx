@@ -49,7 +49,9 @@ export const UserProvider = ({ children }: Props) => {
         loading,
       }}
     >
-      <div>User data: {JSON.stringify(user, null, 2)}</div>
+      <div>
+        {"<debug>"} user data in react context: {JSON.stringify(user, null, 2)}
+      </div>
       {children}
     </UserContext.Provider>
   );

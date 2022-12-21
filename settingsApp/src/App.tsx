@@ -1,15 +1,21 @@
 import React from "react";
-import { useUser } from "../../shell/src/UserProvider";
+import { useUser } from "shell/UserProvider";
 
 const App = () => {
-  const { user } = useUser();
+  const { user, logout, loading } = useUser();
 
   return (
     <div>
       <h1>User Settings</h1>
-      {user
-        ? JSON.stringify(user, null, 2)
-        : "User not logged in. Redirecting to login page..."}
+      {user ? (
+        <>
+          <div>Hello, {user.name}</div>
+          <button onClick={logout}>Logout</button>
+          {loading && "Loading..."}
+        </>
+      ) : (
+        "User not logged in. Redirecting to login page..."
+      )}
     </div>
   );
 };

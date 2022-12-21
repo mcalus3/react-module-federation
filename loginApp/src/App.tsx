@@ -1,18 +1,24 @@
 import React from "react";
-import { useUser } from "../../shell/src/UserProvider";
+import { useUser } from "shell/UserProvider";
 
 const App = () => {
-  const { login, loading } = useUser();
+  const { user, login, loading } = useUser();
+  // const { login, loading } = { login: (_, _2) => {}, loading: false };
 
   return (
     <div>
-      <button
-        onClick={() => {
-          login("user", "password");
-        }}
-      >
-        Login
-      </button>
+      <h1>Login Page</h1>
+      {user ? (
+        "User logged in, redirecting to settings page..."
+      ) : (
+        <button
+          onClick={() => {
+            login("user", "password");
+          }}
+        >
+          Login
+        </button>
+      )}
       {loading && "Loading..."}
     </div>
   );

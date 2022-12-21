@@ -11,6 +11,9 @@ export default defineConfig({
       name: "shell",
       filename: "shell.js",
       remotes: modules,
+      exposes: {
+        "./UserProvider": "./src/UserProvider.tsx",
+      },
     }),
   ],
   build: {

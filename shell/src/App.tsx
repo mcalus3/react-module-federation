@@ -5,17 +5,13 @@ import { UserProvider } from "./UserProvider";
 
 const ModuleMap = {
   null: () => null,
-  app1: React.lazy(() => import("settingsApp/index")),
-  app2: React.lazy(() => import("loginApp/index")),
+  settingsApp: React.lazy(() => import("settingsApp/index")),
+  loginApp: React.lazy(() => import("loginApp/index")),
 };
 
 if (Object.keys(modules).length !== Object.keys(ModuleMap).length - 1) {
   throw new Error("ModuleMap and modules.json are out of sync");
 }
-
-const ComponentsMap = {
-  App2Button: React.lazy(() => import("loginApp/Button")),
-};
 
 const App = () => {
   const [module, setModule] = React.useState<JSX.Element | null>(null);
